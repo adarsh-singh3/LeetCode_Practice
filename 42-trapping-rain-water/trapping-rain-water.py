@@ -11,7 +11,7 @@ class Solution:
         
         right_max = [0] * n
         right_max[n-1] = height[n-1]
-        for i in range(n-2, -1, -1):
+        for i in reversed(range(n-1)):
             right_max[i] = max(right_max[i+1], height[i])
         
         total = 0
