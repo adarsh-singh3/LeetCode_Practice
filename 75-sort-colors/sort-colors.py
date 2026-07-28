@@ -4,19 +4,16 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         n = len(nums)
-        zero = 0
-        one = 0
-        two = n-1
-        while(one<=two):
-            if(nums[one]==0):
-                nums[zero],nums[one] = nums[one],nums[zero]
-                zero+=1
-                one+=1
-            elif(nums[one]==2):
-                nums[two],nums[one] = nums[one],nums[two]
-                two-=1
+        z,o,t = 0,0,n-1
+        while(o<=t):
+            if(nums[o]==0):
+                nums[o],nums[z] = nums[z],nums[o]
+                o+=1
+                z+=1
+            elif(nums[o]==1):
+                o+=1
             else:
-                one+=1
+                nums[o],nums[t] = nums[t],nums[o]
+                t-=1
         return nums
-            
         
