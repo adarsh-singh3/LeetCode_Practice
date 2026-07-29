@@ -1,8 +1,8 @@
 class Solution:
     def threeSum(self, nums: list[int]) -> list[list[int]]:
         nums.sort()
-        n = len(nums)
         ans = []
+        n = len(nums)
         for i in range(n):
             if(i>0 and nums[i]==nums[i-1]):
                 continue
@@ -23,6 +23,4 @@ class Solution:
                 else:
                     k-=1
         return ans
-                    
-
         
