@@ -10,14 +10,13 @@ class Solution:
                 s = nums[i]+nums[j]+nums[k]
                 if(abs(target-s)<abs(target-csum)):
                     csum = s
-                if(s==target):
+                if(target==s):
                     return s
-                if(s<target):
+                elif(s<target):
                     j+=1
                 else:
                     k-=1
         return csum
-            
 
-
-            
+                    
+        
