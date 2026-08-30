@@ -1,5 +1,8 @@
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
+
+        #brute Force
+
         # ans = []
         n = len(nums)
 
@@ -11,7 +14,9 @@ class Solution:
         #         csum = csum*nums[j]
         #     ans.append(csum)
         # return ans
-        
+
+        #better
+
         # pre = [1]*(n+1)
         # for i in range(n):
         #     pre[i+1] = pre[i]*nums[i]
@@ -21,11 +26,11 @@ class Solution:
         #     suff[i] = suff[i+1]*nums[i]
         
         # ans = []
-
         # for i in range(n):
         #     ans.append(pre[i]*suff[i+1])
         # return ans
 
+        #optimal
         ans = [1]*(n)
         for  i in range(1,n):
             ans[i] = ans[i-1]*nums[i-1]
