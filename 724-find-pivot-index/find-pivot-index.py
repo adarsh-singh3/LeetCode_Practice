@@ -1,13 +1,14 @@
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
-        total = sum(nums)
-        lefts = 0 
-        rights = 0
-        n = len(nums)
-        for i in range(n):
-            rights = total-lefts-nums[i]
-            if(rights==lefts):
+        total= sum(nums)
+        csum = 0
+        rsum = 0
+        for i in range(len(nums)):
+            rsum = total-csum-nums[i]
+            if(csum==rsum):
                 return i
-            lefts+=nums[i]
-        return -1
+            csum+=nums[i]
+        else:
+            return -1
+
         
